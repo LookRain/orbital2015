@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+    before_action :require_user, only: [:show, :edit, :update, :destroy]
+    before_action :require_editor, only: [:show, :edit]
+    before_action :require_admin, only: [:destroy]
     def show
         @article = Article.find(params[:id])
     end
