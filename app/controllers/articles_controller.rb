@@ -1,7 +1,13 @@
 class ArticlesController < ApplicationController
+<<<<<<< HEAD
     def index
         @articles = Article.all
     end
+=======
+    before_action :require_user, only: [:show, :edit, :update, :destroy]
+    before_action :require_editor, only: [:show, :edit]
+    before_action :require_admin, only: [:destroy]
+>>>>>>> bdcc0741f4e070074705a49554ac4c848b948b02
     def show
         @article = Article.find(params[:id])
     end
