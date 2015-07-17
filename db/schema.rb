@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150617102545) do
+ActiveRecord::Schema.define(version: 20150712075821) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20150617102545) do
   create_table "lyrics", force: :cascade do |t|
     t.string   "title"
     t.text     "lyrics"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "melodies", force: :cascade do |t|
+    t.string   "title"
+    t.text     "melody"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
